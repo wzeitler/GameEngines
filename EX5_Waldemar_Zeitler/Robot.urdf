@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<model name="robot">
+    <link name="base">
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>1.0 1.0 0.1</size>
+          </box>
+        </geometry>
+    </link>
+    <link name="body">
+        <pose>0.0 0.0 0.55 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>1.0 1.0 1.0</size>
+          </box>
+        </geometry>
+    </link>
+    <link name="head">
+        <pose>0.0 0.0 1.0 0.0 0.0 0.0</pose>
+        <geometry>
+          <cylinder>
+            <size>0.3 0.3 0.3</size>
+          </cylinder>
+        </geometry>
+    </link>
+    <link name="arm1">
+        <pose>0.0 -1.1 0.95 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.2 1.0 0.2</size>
+          </box>
+        </geometry>
+    </link>
+    <link name="arm2">
+        <pose>0.0 1.1 0.95 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.2 1.0 0.2</size>
+          </box>
+        </geometry>
+    </link>
+    <joint name="base_to_body" type="revolute">
+        <pose>0.0 0.0 0.05 0.0 0.0 0.0</pose>
+	<parent>base</parent>
+	<child>body</child>
+	<axis>
+	  <xyz>0.0 0.0 1.0</xyz>
+	</axis>
+    </joint>
+    <joint name="body_to_head" type="revolute">
+        <pose>0.0 0.0 0.1 0.0 0.0 0.0</pose>
+	<parent>body</parent>
+	<child>head</child>
+	<axis>
+	  <xyz>0.0 0.0 1.0</xyz>
+	</axis>
+    </joint>
+
+    <joint name="body_to_arm_1" type="revolute">
+        <pose>0.0 -0.55 0.95 0.0 0.0 0.0</pose>
+	<parent>body</parent>
+	<child>arm1</child>
+	<axis>
+	  <xyz>0.0 1.0 0.0</xyz>
+	</axis>
+    </joint>
+
+    <joint name="body_to_arm_2" type="revolute">
+        <pose>0.0 0.55 0.95 0.0 0.0 0.0</pose>
+	<parent>body</parent>
+	<child>arm2</child>
+	<axis>
+	  <xyz>0.0 1.0 0.0</xyz>
+	</axis>
+    </joint>
+</model>
+</model>
